@@ -156,7 +156,7 @@
         
         .about-image {
             width: 100%;
-            height: 400px;
+            height: 450px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             border-radius: 20px;
             display: flex;
@@ -164,6 +164,36 @@
             justify-content: center;
             color: var(--white);
             font-size: 8rem;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        
+        .about-image-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .about-image-placeholder .initial {
+            font-size: 10rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .about-image-placeholder .name-label {
+            font-size: 1rem;
+            margin-top: 10px;
+            opacity: 0.9;
         }
         
         .about-text h3 {
@@ -313,6 +343,9 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#vision">Vision</a></li>
                     <li><a href="#priorities">Priorities</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -332,7 +365,13 @@
     <section id="about">
         <h2 class="section-title">About Griffins</h2>
         <div class="about-content">
-            <div class="about-image">🎓</div>
+            <div class="about-image">
+                <!-- Replace src with actual photo when available -->
+                <div class="about-image-placeholder">
+                    <span class="initial">GRM</span>
+                    <span class="name-label">Griffins Robert Maina</span>
+                </div>
+            </div>
             <div class="about-text">
                 <h3>A Leader for Kitutu Chache North</h3>
                 <p>Griffins Robert Maina is a distinguished Kenyan Certified Public Accountant (CPA) with a proven track record in financial management, audit, and economic policy. His journey from the communities of Kitutu Chache North to professional excellence has given him deep insight into the needs and aspirations of his constituents.</p>
@@ -390,6 +429,225 @@
             </div>
         </div>
     </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <p style="text-align: center; max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem;">Moments from the field - Connecting with the community</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-placeholder">📷</div>
+                <p>Community Engagement</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">📷</div>
+                <p>Town Hall Meetings</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">📷</div>
+                <p>Public Forums</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">📷</div>
+                <p>Outreach Programs</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">📷</div>
+                <p>Youth Initiatives</p>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-placeholder">📷</div>
+                <p>Women's Forums</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- News & Updates Section -->
+    <section id="news">
+        <h2 class="section-title">News & Updates</h2>
+        <div class="news-grid">
+            <article class="news-card">
+                <div class="news-date">March 2026</div>
+                <h3>Campaign Launch</h3>
+                <p>Officially launching our campaign for Kitutu Chache North. Together, we will build a constituency we can all be proud of.</p>
+                <a href="#contact" class="read-more">Learn More →</a>
+            </article>
+            <article class="news-card">
+                <div class="news-date">February 2026</div>
+                <h3>Town Hall Meetings</h3>
+                <p>Completed successful town hall meetings across the constituency. Thank you for your overwhelming participation.</p>
+                <a href="#contact" class="read-more">Learn More →</a>
+            </article>
+            <article class="news-card">
+                <div class="news-date">January 2026</div>
+                <h3>Vision for the Future</h3>
+                <p>Unveiling our comprehensive development plan focusing on education, healthcare, and economic growth.</p>
+                <a href="#contact" class="read-more">Learn More →</a>
+            </article>
+        </div>
+    </section>
+    
+    <style>
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-date {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .news-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .news-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .read-more:hover {
+            color: var(--secondary);
+        }
+    </style>
+    
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, #2d7a3f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            opacity: 0.8;
+        }
+        
+        .gallery-item p {
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0;
+        }
+    </style>
+    
+    <!-- Newsletter Section -->
+    <section id="newsletter">
+        <div class="newsletter-content">
+            <h2 class="section-title">Stay Updated</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem;">Subscribe to our newsletter to receive the latest updates, event announcements, and news from the campaign trail.</p>
+            <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+        </div>
+    </section>
+    
+    <style            </form>
+>
+        .newsletter-content {
+            background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+            padding: 60px 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 25px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .newsletter-form .btn {
+            padding: 15px 35px;
+        }
+        
+        @media (max-width: 480px) {
+            .newsletter-content {
+                padding: 40px 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form .btn {
+                width: 100%;
+            }
+        }
+    </style>
+    
+    <script>
+        function handleNewsletter(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing! We will keep you updated on our campaign progress.');
+            e.target.reset();
+        }
+    </script>
     
     <section class="contact-section" id="contact">
         <h2 class="section-title">Get in Touch</h2>
