@@ -420,6 +420,153 @@
             }
         }
     </style>
+    
+    <style>
+        /* Policies Section */
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .policy-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .policy-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .policy-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .policy-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 0;
+        }
+        
+        .policy-content {
+            padding: 25px;
+        }
+        
+        .policy-content h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .policy-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .policy-content li {
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .policy-impact {
+            background: rgba(201,162,39,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .policy-impact strong {
+            color: var(--primary);
+        }
+        
+        .policy-implementation {
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .policy-implementation h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        .implementation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .implementation-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            text-align: left;
+        }
+        
+        .implementation-number {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .implementation-content h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .implementation-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .policies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .implementation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .policy-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -429,6 +576,7 @@
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#vision">Vision</a></li>
+                    <li><a href="#policies">Policies</a></li>
                     <li><a href="#priorities">Priorities</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#news">News</a></li>
@@ -503,6 +651,169 @@
             <h2 class="section-title">Our Vision</h2>
             <p>"To transform Kitutu Chache North into a model constituency where every resident has access to quality education, healthcare, economic opportunities, and sustainable development. I believe in leadership that is transparent, accountable, and focused on delivering tangible results for the people we serve."</p>
             <p style="margin-top: 20px; color: var(--secondary); font-weight: bold;">— Griffins Robert Maina</p>
+        </div>
+    </section>
+    
+    <!-- Detailed Policies Section -->
+    <section id="policies">
+        <div class="section-header">
+            <h2 class="section-title">Our Policy Agenda</h2>
+            <p class="section-subtitle">Comprehensive solutions for Kitutu Chache North</p>
+        </div>
+        
+        <div class="policies-grid">
+            <div class="policy-card">
+                <div class="policy-header">
+                    <div class="policy-icon">📚</div>
+                    <h3>Education Transformation</h3>
+                </div>
+                <div class="policy-content">
+                    <h4>Key Initiatives:</h4>
+                    <ul>
+                        <li>Renovate and equip all 45 primary schools with modern facilities</li>
+                        <li>Establish 5 new digital learning centers in remote areas</li>
+                        <li>Provide 2,000 annual bursaries for secondary and tertiary education</li>
+                        <li>Train 150 teachers annually on modern pedagogical methods</li>
+                        <li>Create 3 vocational training centers for skills development</li>
+                        <li>Establish a constituency education fund of KES 50 million annually</li>
+                    </ul>
+                    <div class="policy-impact">
+                        <strong>Impact:</strong> 95% transition rate from primary to secondary, 80% digital literacy among students
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-card">
+                <div class="policy-header">
+                    <div class="policy-icon">🏥</div>
+                    <h3>Healthcare Access</h3>
+                </div>
+                <div class="policy-content">
+                    <h4>Key Initiatives:</h4>
+                    <ul>
+                        <li>Upgrade Marani Sub-County Hospital to Level 4 status</li>
+                        <li>Equip all 7 ward health centers with essential medicines</li>
+                        <li>Employ 50 community health workers for home-based care</li>
+                        <li>Establish mobile clinic services for remote areas</li>
+                        <li>Create a health insurance scheme for 5,000 vulnerable families</li>
+                        <li>Construct 3 new dispensaries in underserved areas</li>
+                    </ul>
+                    <div class="policy-impact">
+                        <strong>Impact:</strong> Universal health coverage for 90% of residents, reduced maternal mortality by 40%
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-card">
+                <div class="policy-header">
+                    <div class="policy-icon">🛣️</div>
+                    <h3>Infrastructure Development</h3>
+                </div>
+                <div class="policy-content">
+                    <h4>Key Initiatives:</h4>
+                    <ul>
+                        <li>Tarmac 45km of key roads connecting major trading centers</li>
+                        <li>Gravel and maintain 120km of rural access roads</li>
+                        <li>Install solar street lighting in all 7 ward headquarters</li>
+                        <li>Construct 15 modern market sheds for traders</li>
+                        <li>Drill 25 boreholes for clean water access</li>
+                        <li>Extend electricity to 3,000 new households</li>
+                    </ul>
+                    <div class="policy-impact">
+                        <strong>Impact:</strong> 95% road accessibility, 100% access to clean water, 85% electricity coverage
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-card">
+                <div class="policy-header">
+                    <div class="policy-icon">🌾</div>
+                    <h3>Agricultural Revolution</h3>
+                </div>
+                <div class="policy-content">
+                    <h4>Key Initiatives:</h4>
+                    <ul>
+                        <li>Establish 5 fertilizer and seed subsidy programs</li>
+                        <li>Create 3 modern produce collection centers</li>
+                        <li>Install 10 solar-powered irrigation systems</li>
+                        <li>Train 2,000 farmers on modern agricultural techniques</li>
+                        <li>Establish 7 cooperative societies for collective marketing</li>
+                        <li>Introduce crop insurance for 1,500 farmers</li>
+                    </ul>
+                    <div class="policy-impact">
+                        <strong>Impact:</strong> 40% increase in farm income, 60% reduction in post-harvest losses
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-card">
+                <div class="policy-header">
+                    <div class="policy-icon">💼</div>
+                    <h3>Youth & Women Empowerment</h3>
+                </div>
+                <div class="policy-content">
+                    <h4>Key Initiatives:</h4>
+                    <ul>
+                        <li>Establish a KES 20 million youth enterprise fund</li>
+                        <li>Create 500 direct jobs through constituency projects</li>
+                        <li>Train 1,000 youth in digital skills and entrepreneurship</li>
+                        <li>Support 200 women-led businesses with startup capital</li>
+                        <li>Establish 3 business incubation centers</li>
+                        <li>Provide business development services to 500 entrepreneurs</li>
+                    </ul>
+                    <div class="policy-impact">
+                        <strong>Impact:</strong> 70% youth employment rate, 300 new businesses created annually
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-card">
+                <div class="policy-header">
+                    <div class="policy-icon">🤝</div>
+                    <h3>Social Protection</h3>
+                </div>
+                <div class="policy-content">
+                    <h4>Key Initiatives:</h4>
+                    <ul>
+                        <li>Expand cash transfer programs to 1,000 vulnerable households</li>
+                        <li>Establish 3 rescue centers for gender-based violence victims</li>
+                        <li>Create special education programs for 200 children with disabilities</li>
+                        <li>Provide assistive devices to 150 persons with disabilities</li>
+                        <li>Establish feeding programs in 20 primary schools</li>
+                        <li>Create elderly care programs for 300 senior citizens</li>
+                    </ul>
+                    <div class="policy-impact">
+                        <strong>Impact:</strong> 100% coverage of vulnerable populations, reduced poverty rate by 30%
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="policy-implementation">
+            <h3>Implementation Framework</h3>
+            <div class="implementation-grid">
+                <div class="implementation-item">
+                    <div class="implementation-number">1</div>
+                    <div class="implementation-content">
+                        <h4>Year 1: Foundation Building</h4>
+                        <p>Establish institutional frameworks, conduct needs assessments, and begin infrastructure projects</p>
+                    </div>
+                </div>
+                <div class="implementation-item">
+                    <div class="implementation-number">2</div>
+                    <div class="implementation-content">
+                        <h4>Year 2-3: Service Delivery</h4>
+                        <p>Roll out core programs and services, expand coverage to all wards</p>
+                    </div>
+                </div>
+                <div class="implementation-item">
+                    <div class="implementation-number">3</div>
+                    <div class="implementation-content">
+                        <h4>Year 4-5: Consolidation</h4>
+                        <p>Scale successful programs, ensure sustainability, and measure impact</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
