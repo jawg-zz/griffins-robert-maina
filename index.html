@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Griffins Robert Maina | People's Champion for Kitutu Chache North</title>
+    <title>Griffins Robert Maina | People's Champion for Nyaribari Chache</title>
     <style>
         * {
             margin: 0;
@@ -333,6 +333,78 @@
             }
         }
     </style>
+    
+    <style>
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 80px 20px;
+            margin-top: 0;
+        }
+        
+        .stats-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .stats-section .section-title {
+            color: var(--white);
+            margin-bottom: 50px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .stat-number {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--white);
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -355,10 +427,35 @@
     <section class="hero">
         <h1>Griffins Robert Maina</h1>
         <p class="subtitle">Voice of the People</p>
-        <p class="tagline">Building a Better Future for Kitutu Chache North Constituency</p>
+        <p class="tagline">Building a Better Future for Nyaribari Chache Constituency</p>
         <div class="cta-buttons">
             <a href="#contact" class="btn btn-primary">Get in Touch</a>
             <a href="#vision" class="btn btn-outline">Our Vision</a>
+        </div>
+    </section>
+    
+    <!-- Constituency Stats -->
+    <section class="stats-section">
+        <div class="stats-content">
+            <h2 class="section-title" style="color: white;">Nyaribari Chache at a Glance</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">95,000+</span>
+                    <span class="stat-label">Registered Voters</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">65%</span>
+                    <span class="stat-label">Youth Population</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">78%</span>
+                    <span class="stat-label">Agricultural Economy</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">42</span>
+                    <span class="stat-label">Wards</span>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -373,9 +470,9 @@
                 </div>
             </div>
             <div class="about-text">
-                <h3>A Leader for Kitutu Chache North</h3>
-                <p>Griffins Robert Maina is a distinguished Kenyan People's Champion with a proven track record in financial management, audit, and economic policy. His journey from the communities of Kitutu Chache North to professional excellence has given him deep insight into the needs and aspirations of his constituents.</p>
-                <p>As an aspiring Member of Parliament for Kitutu Chache North Constituency, Griffins is committed to bringing transformative leadership that addresses the unique challenges facing the region while leveraging its immense potential for growth and development.</p>
+                <h3>A Leader for Nyaribari Chache</h3>
+                <p>Griffins Robert Maina is a distinguished Kenyan People's Champion with a proven track record in financial management, audit, and economic policy. His journey from the communities of Nyaribari Chache to professional excellence has given him deep insight into the needs and aspirations of his constituents.</p>
+                <p>As an aspiring Member of Parliament for Nyaribari Chache Constituency, Griffins is committed to bringing transformative leadership that addresses the unique challenges facing the region while leveraging its immense potential for growth and development.</p>
                 <div class="credentials">
                     <span class="credential">People's Champion</span>
                     <span class="credential">Political Leader</span>
@@ -389,7 +486,7 @@
     <section class="vision-section" id="vision">
         <div class="vision-content">
             <h2 class="section-title">Our Vision</h2>
-            <p>"To transform Kitutu Chache North into a model constituency where every resident has access to quality education, healthcare, economic opportunities, and sustainable development. I believe in leadership that is transparent, accountable, and focused on delivering tangible results for the people we serve."</p>
+            <p>"To transform Nyaribari Chache into a model constituency where every resident has access to quality education, healthcare, economic opportunities, and sustainable development. I believe in leadership that is transparent, accountable, and focused on delivering tangible results for the people we serve."</p>
             <p style="margin-top: 20px; color: var(--secondary); font-weight: bold;">— Griffins Robert Maina</p>
         </div>
     </section>
@@ -400,7 +497,7 @@
             <div class="priority-card">
                 <div class="priority-icon">📚</div>
                 <h3>Education</h3>
-                <p>Improving access to quality education for all children in Kitutu Chache North. Investing in schools, teacher training, and educational infrastructure to create opportunities for the next generation.</p>
+                <p>Improving access to quality education for all children in Nyaribari Chache. Investing in schools, teacher training, and educational infrastructure to create opportunities for the next generation.</p>
             </div>
             <div class="priority-card">
                 <div class="priority-icon">🏥</div>
@@ -469,7 +566,7 @@
             <article class="news-card">
                 <div class="news-date">March 2026</div>
                 <h3>Campaign Launch</h3>
-                <p>Officially launching our campaign for Kitutu Chache North. Together, we will build a constituency we can all be proud of.</p>
+                <p>Officially launching our campaign for Nyaribari Chache. Together, we will build a constituency we can all be proud of.</p>
                 <a href="#contact" class="read-more">Learn More →</a>
             </article>
             <article class="news-card">
@@ -651,7 +748,7 @@
     
     <section class="contact-section" id="contact">
         <h2 class="section-title">Get in Touch</h2>
-        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Join us in building a better future for Kitutu Chache North. Your voice matters, and together we can make a difference.</p>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Join us in building a better future for Nyaribari Chache. Your voice matters, and together we can make a difference.</p>
         <div class="contact-info">
             <div class="contact-item">
                 <span class="contact-icon">📧</span>
@@ -663,14 +760,14 @@
             </div>
             <div class="contact-item">
                 <span class="contact-icon">📍</span>
-                <span>Kitutu Chache North, Kenya</span>
+                <span>Nyaribari Chache, Kenya</span>
             </div>
         </div>
     </section>
     
     <footer>
         <p>&copy; 2026 Griffins Robert Maina. All Rights Reserved.</p>
-        <p style="margin-top: 10px; font-size: 0.9rem;">People's Champion - Kitutu Chache North</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">People's Champion - Nyaribari Chache</p>
     </footer>
 </body>
 </html>
