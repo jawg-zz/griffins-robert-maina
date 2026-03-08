@@ -337,20 +337,37 @@
     <style>
         /* Stats Section */
         .stats-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background: linear-gradient(135deg, #0f3d1a 0%, #1a5f2a 50%, #2d7a3f 100%);
             padding: 80px 20px;
             margin-top: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></svg>');
+            background-size: 50px 50px;
         }
         
         .stats-content {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         
         .stats-section .section-title {
-            color: var(--white);
+            color: #ffffff;
             margin-bottom: 50px;
+            font-size: 2rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
         .stats-grid {
@@ -360,33 +377,31 @@
         }
         
         .stat-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
             padding: 40px 25px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            background: rgba(255,255,255,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         }
         
         .stat-number {
             display: block;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--secondary);
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1a5f2a;
             margin-bottom: 10px;
+            line-height: 1;
         }
         
         .stat-label {
-            color: var(--white);
+            color: #333;
             font-size: 1rem;
-            opacity: 0.9;
+            font-weight: 600;
         }
         
         @media (max-width: 768px) {
