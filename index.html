@@ -24,6 +24,20 @@
             line-height: 1.6;
             color: var(--dark);
             background: var(--light);
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Improve touch targets for mobile */
+        a, button, input, textarea, select {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Better focus states for accessibility */
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
         }
         
         /* Header */
@@ -313,23 +327,246 @@
             opacity: 0.8;
         }
         
+        /* Section Header Styles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            footer {
+                padding: 30px 15px;
+            }
+            
+            footer p {
+                font-size: 0.9rem;
+            }
+            
+            .section-header {
+                margin-bottom: 30px;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        .hamburger {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+            position: relative;
+            transition: background 0.3s;
+        }
+        
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+            transition: transform 0.3s;
+        }
+        
+        .hamburger::before {
+            top: -8px;
+        }
+        
+        .hamburger::after {
+            top: 8px;
+        }
+        
+        .mobile-menu-toggle.active .hamburger {
+            background: transparent;
+        }
+        
+        .mobile-menu-toggle.active .hamburger::before {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        
+        .mobile-menu-toggle.active .hamburger::after {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, var(--primary) 0%, #2d7a3f 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s, visibility 0.3s;
+                z-index: 999;
+            }
+            
+            nav.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+            
+            nav a {
+                font-size: 1.3rem;
+                padding: 10px 20px;
+            }
+            
+            .hero {
+                padding: 100px 20px 60px;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
             
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .btn {
+                padding: 14px 35px;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 280px;
+            }
+            
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
             
-            nav ul {
-                gap: 15px;
+            .about-image {
+                height: 300px;
             }
             
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
+            .about-image-placeholder .initial {
+                font-size: 6rem;
+            }
+            
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+            
+            .about-text p {
+                font-size: 1rem;
+            }
+            
+            .credentials {
+                justify-content: center;
+            }
+            
+            .credential {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+            
+            section {
+                padding: 50px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            
+            .vision-content p {
+                font-size: 1.1rem;
+                padding: 0 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero .tagline {
+                font-size: 0.9rem;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+                font-size: 0.95rem;
+            }
+            
+            .about-image {
+                height: 250px;
+            }
+            
+            .about-image-placeholder .initial {
+                font-size: 5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .credentials {
+                gap: 10px;
+            }
+            
+            .credential {
+                font-size: 0.8rem;
+                padding: 6px 12px;
             }
         }
     </style>
@@ -405,18 +642,49 @@
         }
         
         @media (max-width: 768px) {
+            .stats-section {
+                padding: 50px 15px;
+            }
+            
+            .stats-section .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+            }
+            
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .stat-card {
+                padding: 25px 15px;
             }
             
             .stat-number {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 0.85rem;
             }
         }
         
         @media (max-width: 480px) {
             .stats-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            
+            .stat-card {
+                padding: 20px 12px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .stat-label {
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -555,15 +823,97 @@
         @media (max-width: 768px) {
             .policies-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
-            .implementation-grid {
-                grid-template-columns: 1fr;
+            .policy-card {
+                margin: 0;
             }
             
             .policy-header {
                 flex-direction: column;
                 text-align: center;
+                padding: 20px;
+            }
+            
+            .policy-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .policy-header h3 {
+                font-size: 1.2rem;
+            }
+            
+            .policy-content {
+                padding: 20px;
+            }
+            
+            .policy-content h4 {
+                font-size: 1rem;
+            }
+            
+            .policy-content ul {
+                padding-left: 15px;
+            }
+            
+            .policy-content li {
+                font-size: 0.9rem;
+            }
+            
+            .policy-impact {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+            
+            .policy-implementation {
+                margin-top: 40px;
+            }
+            
+            .policy-implementation h3 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+            
+            .implementation-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .implementation-item {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .implementation-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .implementation-content h4 {
+                font-size: 1rem;
+            }
+            
+            .implementation-content p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .policy-header {
+                padding: 15px;
+            }
+            
+            .policy-content {
+                padding: 15px;
+            }
+            
+            .policy-content li {
+                font-size: 0.85rem;
+                margin-bottom: 6px;
             }
         }
     </style>
@@ -572,7 +922,10 @@
     <header>
         <div class="header-content">
             <div class="logo">GRM <span>Foundation</span></div>
-            <nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#vision">Vision</a></li>
@@ -853,6 +1206,51 @@
         </div>
     </section>
     
+    <style>
+        @media (max-width: 768px) {
+            .priorities-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .priority-card {
+                padding: 25px;
+            }
+            
+            .priority-icon {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .priority-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+            }
+            
+            .priority-card p {
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .priority-card {
+                padding: 20px;
+            }
+            
+            .priority-icon {
+                font-size: 2rem;
+            }
+            
+            .priority-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .priority-card p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    
     <!-- Gallery Section -->
     <section id="gallery">
         <h2 class="section-title">Gallery</h2>
@@ -958,6 +1356,39 @@
         .read-more:hover {
             color: var(--secondary);
         }
+        
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .news-card {
+                padding: 25px;
+            }
+            
+            .news-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .news-card p {
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .news-card {
+                padding: 20px;
+            }
+            
+            .news-card h3 {
+                font-size: 1.1rem;
+            }
+            
+            .news-card p {
+                font-size: 0.9rem;
+            }
+        }
     </style>
     
     <style>
@@ -997,6 +1428,40 @@
             font-weight: 600;
             color: var(--dark);
             margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .gallery-placeholder {
+                height: 150px;
+                font-size: 3rem;
+            }
+            
+            .gallery-item p {
+                padding: 12px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .gallery-placeholder {
+                height: 180px;
+                font-size: 3.5rem;
+            }
+            
+            .gallery-item p {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
         }
     </style>
     
@@ -1302,19 +1767,110 @@
         @media (max-width: 768px) {
             .contact-container {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
             
             .contact-info-wrapper {
                 order: -1;
+                text-align: center;
+            }
+            
+            .contact-info-wrapper h3 {
+                font-size: 1.3rem;
+                margin-bottom: 25px;
+            }
+            
+            .contact-info-list {
+                gap: 20px;
+            }
+            
+            .contact-info-wrapper .contact-item {
+                justify-content: center;
+                text-align: left;
             }
             
             .contact-form-wrapper {
-                padding: 30px 20px;
+                padding: 25px 20px;
+            }
+            
+            .contact-form label {
+                font-size: 0.9rem;
+            }
+            
+            .contact-form input,
+            .contact-form textarea {
+                padding: 12px 15px;
+                font-size: 16px;
+            }
+            
+            .contact-form .btn {
+                padding: 14px;
+                font-size: 1rem;
+            }
+            
+            .social-links {
+                margin-top: 30px;
+            }
+            
+            .social-links h4 {
+                margin-bottom: 12px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-section p {
+                font-size: 1rem;
+            }
+            
+            .contact-info-wrapper .contact-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 8px;
+            }
+            
+            .contact-form-wrapper {
+                padding: 20px 15px;
+            }
+            
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
             }
         }
     </style>
     
     <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking a link
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
         // Newsletter form handler
         document.getElementById('newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
