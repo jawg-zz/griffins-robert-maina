@@ -1001,24 +1001,40 @@
     </style>
     
     <!-- Newsletter Section -->
-    <section id="newsletter">
+    <section id="newsletter" class="newsletter-section">
         <div class="newsletter-content">
             <h2 class="section-title">Stay Updated</h2>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem;">Subscribe to our newsletter to receive the latest updates, event announcements, and news from the campaign trail.</p>
-            <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-                <input type="email" placeholder="Enter your email address" required>
+            <p>Subscribe to our newsletter to receive the latest updates, event announcements, and news from the campaign trail.</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <input type="email" name="email" placeholder="Enter your email address" required>
                 <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+            <div id="newsletter-success" class="form-success" style="display: none;">
+                <span>✓</span> Thank you for subscribing! We'll keep you updated.
+            </div>
         </div>
     </section>
     
-    <style            </form>
->
+    <style>
+        .newsletter-section {
+            padding: 80px 20px;
+            background: var(--light);
+        }
+        
         .newsletter-content {
             background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
             padding: 60px 40px;
             border-radius: 20px;
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
+        }
+        
+        .newsletter-content p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: #555;
         }
         
         .newsletter-form {
@@ -1037,16 +1053,37 @@
             border: 2px solid #ddd;
             border-radius: 30px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
         
         .newsletter-form input:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26,95,42,0.1);
         }
         
         .newsletter-form .btn {
-            padding: 18px 45px; font-size: 1.1rem;
+            padding: 18px 45px;
+            font-size: 1.1rem;
+        }
+        
+        .form-success {
+            margin-top: 20px;
+            padding: 15px 25px;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         @media (max-width: 480px) {
@@ -1064,32 +1101,256 @@
         }
     </style>
     
-    <script>
-        function handleNewsletter(e) {
-            e.preventDefault();
-            alert('Thank you for subscribing! We will keep you updated on our campaign progress.');
-            e.target.reset();
-        }
-    </script>
-    
     <section class="contact-section" id="contact">
         <h2 class="section-title">Get in Touch</h2>
-        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Join us in building a better future for Kitutu Chache North. Your voice matters, and together we can make a difference.</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                <span class="contact-icon">📧</span>
-                <span>griffins@grmfoundation.co.ke</span>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px;">Join us in building a better future for Kitutu Chache North. Your voice matters, and together we can make a difference.</p>
+        
+        <div class="contact-container">
+            <div class="contact-form-wrapper">
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <div id="contact-success" class="form-success" style="display: none;">
+                    <span>✓</span> Thank you! Your message has been sent. We'll get back to you soon.
+                </div>
             </div>
-            <div class="contact-item">
-                <span class="contact-icon">📱</span>
-                <span>+254 700 000 000</span>
-            </div>
-            <div class="contact-item">
-                <span class="contact-icon">📍</span>
-                <span>Kitutu Chache North, Kenya</span>
+            
+            <div class="contact-info-wrapper">
+                <h3>Contact Information</h3>
+                <div class="contact-info-list">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <span>griffins@grmfoundation.co.ke</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <strong>Phone</strong>
+                            <span>+254 700 000 000</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Location</strong>
+                            <span>Kitutu Chache North, Kenya</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-icon" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-icon" aria-label="WhatsApp">💬</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .contact-form-wrapper {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(201,162,39,0.2);
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .contact-form .btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        .contact-info-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .contact-info-wrapper h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-info-wrapper .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 1rem;
+        }
+        
+        .contact-info-wrapper .contact-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-info-wrapper .contact-item strong {
+            display: block;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-bottom: 3px;
+        }
+        
+        .contact-info-wrapper .contact-item span:last-child {
+            font-size: 1.05rem;
+        }
+        
+        .social-links {
+            margin-top: 40px;
+        }
+        
+        .social-links h4 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info-wrapper {
+                order: -1;
+            }
+            
+            .contact-form-wrapper {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+    
+    <script>
+        // Newsletter form handler
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var successDiv = document.getElementById('newsletter-success');
+            
+            // Simulate form submission
+            form.style.display = 'none';
+            successDiv.style.display = 'flex';
+            
+            // Reset after 5 seconds
+            setTimeout(function() {
+                form.reset();
+                form.style.display = 'flex';
+                successDiv.style.display = 'none';
+            }, 5000);
+        });
+        
+        // Contact form handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var successDiv = document.getElementById('contact-success');
+            
+            // Simulate form submission
+            form.style.display = 'none';
+            successDiv.style.display = 'flex';
+            
+            // Reset after 5 seconds
+            setTimeout(function() {
+                form.reset();
+                form.style.display = 'block';
+                successDiv.style.display = 'none';
+            }, 5000);
+        });
+    </script>
     
     <footer>
         <p>&copy; 2026 Griffins Robert Maina. All Rights Reserved.</p>
